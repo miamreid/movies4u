@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>Movies4U</title>
+</head>
+
+<body>
+    <h1 class="main-header">Movies4U</h1>
+    <!-- multistep form -->
+    <form id="msform">
+        <!-- progressbar -->
+        <ul id="progressbar">
+            <li class="active">Genre</li>
+            <li>Decade</li>
+            <li>Movie Length</li>
+            <li>Actors/Actresses
+            </li>
+        </ul>
+        <!-- fieldsets -->
+        <fieldset>
+            <h2 class="fs-title">Pick the Genre</h2>
+            <select></select>
+            <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+        <fieldset>
+            <h2 class="fs-title">Pick the Decade</h2>
+            <select></select>
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+        <fieldset>
+            <h2 class="fs-title">Movie Length</h2>
+            <div class="slidecontainer">
+                <p class="min-length">>90 minutes to 3+ hours</p>
+                <input type="range" min="1" max="100" value="50">
+            </div>
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+        <fieldset>
+            <h2 class="fs-title">Actors/Actresses</h2>
+            <select></select>
+            <h2 class="fs-title">Director</h2>
+            <select></select>
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <a href="https://twitter.com/GoktepeAtakan" class="submit action-button" target="_top">Submit</a>
+        </fieldset>
+    </form>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="semantic/dist/semantic.min.js"></script>
+
+</html>
