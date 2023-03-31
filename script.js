@@ -15,8 +15,8 @@ function getNYTAPI() {
 
 getNYTAPI();
 
-function getomdbAPI() {
-    var requestUrl = "http://www.omdbapi.com/?i=tt3896198&apikey=908b7175";
+function getdatabaseAPI() {
+    var requestUrl = "https://api.themoviedb.org/3/movie/550?api_key=701ebb9db6b0f6cd175ada217a8261bb";
 
     fetch(requestUrl)
     .then(function (response) {
@@ -28,4 +28,4 @@ function getomdbAPI() {
     })
 }
 
-getomdbAPI();
+getdatabaseAPI();
