@@ -43,36 +43,17 @@ $(document.readyState(function(){
 */
 
 
-function omdbAPI(){
-  var apiKey = 'def92d1a'
-  var openMovieUrl = `https://www.omdbapi.com/?apikey=${apiKey}&type=movie`; 
+function moviedbAPI(){
+  var apiKey = '701ebb9db6b0f6cd175ada217a8261bb'
+  var movieUrl = `https://api.themoviedb.org/3/movie/550/recommendations?api_key=701ebb9db6b0f6cd175ada217a8261bb&language=en-US&page=1`; 
   
-  fetch(openMovieUrl)
+  fetch(movieUrl)
     .then(function(response){
-      return response.json()
+      return response.json();
     })
     .then(function(data){
       console.log(data);
-      var randomIndex = Math.floor(Math.random() * data.Search.length);
-      var imdbID = data.Search[randomIndex].imdbID;
-      
-      return fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${imdbID}&plot=full`);
     })
-    .then(response => response.json())
-    .then(function(movie){
+  }
 
-      var title = movie.Title;
-      var genre = movie.Genre;
-      var year = movie.Year;
-      var plot = movie.Plot;
-
-      console.log(title);
-      console.log(genre);
-      console.log(year);
-      console.log(plot);
-
-    })
-    .catch(error => {
-      console.error(error);
-    });
-}
+moviedbAPI();
