@@ -28,11 +28,12 @@ function moviedbAPI(){
   var API_URL = "https://api.themoviedb.org/3/discover/movie";
   
   // Get the filter inputs
-  var releaseYear = 2008;
-  var genre = 'action';
+  var releaseYear = 2004;
+  var genre = 'Action';
+  var length1 = 90;
   
   // Construct the API URL with the filter parameters
-  var url = `${API_URL}?api_key=${API_KEY}&primary_release_year=${releaseYear}&with_genres=${genre}&sort_by=vote_average.desc`;
+  var url = `${API_URL}?api_key=${API_KEY}&top_rated&primary_release_year=${releaseYear}&with_genres=${genre}&with_runtime.gte=${length1}&sort_by=popularity.desc&language=en-US&page=1`;
 
   // Fetch the data from the API
   fetch(url)
@@ -40,14 +41,16 @@ function moviedbAPI(){
       return response.json()
     })
     .then(function(data) {
+    
   // Display the first movie that matches the filter criteria
     if (data.results.length > 0) {
       var movie = data.results[0];
       var title = movie.title;
       var releaseDate = movie.release_date;
       var genre = movie.genre_ids[0];
+      var duration = movie.runtime;
 
-      console.log(`Title: ${title}, Release Date: ${releaseDate}, Genre: ${genre}`);
+      console.log(`Title: ${title}, Release Date: ${releaseDate}, Genre: ${genre}, Duration: ${duration}`);
       } else {
       console.log("No movies found that match the filter criteria.");
       }
@@ -55,7 +58,3 @@ function moviedbAPI(){
   }
 
 moviedbAPI();
-
-
-
-  
