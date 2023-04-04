@@ -46,10 +46,11 @@ body
 	border: 0 none;
 	border-radius: 3px;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-	padding: 20px 30px;
+	padding: 30% 30px;
 	box-sizing: border-box;
 	width: 80%;
-	margin: 10% 10%;
+    height: 50vh;
+	margin: 20% 10%;
 	
 	/*stacking fieldsets above each other*/
 	position: relative;
@@ -57,12 +58,13 @@ body
 /*Hide all except first fieldset*/
 #msform fieldset:not(:first-of-type)
 {
-	/* display: none; */
+	display: none;
 }
 .user-input
 {
     display: inline-block;
     width: 60%;
+    margin-bottom: 20px;
 }
 /*inputs*/
 #msform input, #msform textarea
@@ -104,7 +106,7 @@ body
 	font-size: 15px;
 	text-transform: uppercase;
 	color: white;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 }
 .fs-subtitle
 {
@@ -128,22 +130,24 @@ body
 	color: white;
 	text-transform: uppercase;
 	font-size: 9px;
-	width: 33.33%;
+	width: 15%;
 	float: left;
 	position: relative;
+    text-align: center;
 }
 #progressbar li:before
 {
 	content: counter(step);
 	counter-increment: step;
-	width: 20px;
-	line-height: 20px;
+	width: 30px;
+	line-height: 30px;
 	display: block;
-	font-size: 10px;
+	font-size: 20px;
 	color: white;
 	background: #6D597A;
 	border-radius: 3px;
 	margin: 0 auto 5px auto;
+    text-align: center;
 }
 /*progressbar connectors*/
 #progressbar li:after
