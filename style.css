@@ -283,3 +283,17 @@ aside /*Filters area on the left side*/
 {
 	background-color: #27AE60;
 }
+
+datalist {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 13px;
+  color:#666;
+  margin-top: -25px;
+  margin-bottom: 25px;
+}
+
+option {
+	padding: 0;
+}
