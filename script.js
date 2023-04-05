@@ -22,6 +22,10 @@ $(document.readyState(function(){
 
 
 */
+// HTML Elements
+
+var userGenre = document.getElementById("user-genre");
+
 var API_KEY = "701ebb9db6b0f6cd175ada217a8261bb";
 
 function genreSelector(){
@@ -32,7 +36,9 @@ function genreSelector(){
       return response.json()
     })
     .then(function(data) {
-      console.log(data);
+      for (var i = 0; i < 19; i++){
+        console.log(data.genres[i].id + " " + data.genres[i].name);
+      }
   })
 }
 
@@ -43,7 +49,7 @@ function moviedbAPI(){
   
   // Get the filter inputs
   var releaseYear = 2006 //document.getElementById("decade").value;
-  var genre = 'Comedy'//document.getElementById("genre").value;
+  var genre = 35//document.getElementById("genre").value;
   var lengthTime = 90;
   var nc17 = true;
   
@@ -56,19 +62,8 @@ function moviedbAPI(){
       return response.json()
     })
     .then(function(data) {
-  // Display the first movie that matches the filter criteria
-    if (data.results.length > 0) {
-      var movie = data.results[0];
-      var title = movie.title;
-      var releaseDate = movie.release_date;
-      var genre = movie.genre_ids[0];
-      var duration = movie.runtime;
-
-      console.log(`Title: ${title}, Release Date: ${releaseDate}, Genre: ${genre}, Duration: ${duration}`);
-      } else {
-      console.log("No movies found that match the filter criteria.");
-      }
-    });
-  }
+      console.log(data);
+  })
+}
 
 moviedbAPI();
