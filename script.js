@@ -22,26 +22,40 @@ $(document.readyState(function(){
 
 
 */
+var API_KEY = "701ebb9db6b0f6cd175ada217a8261bb";
 
-function moviedbAPI(){
-  var API_KEY = "701ebb9db6b0f6cd175ada217a8261bb";
-  var API_URL = "https://api.themoviedb.org/3/discover/movie";
-  
-  // Get the filter inputs
-  var releaseYear = 2004;
-  var genre = 'Action';
-  var length1 = 90;
-  
-  // Construct the API URL with the filter parameters
-  var url = `${API_URL}?api_key=${API_KEY}&top_rated&primary_release_year=${releaseYear}&with_genres=${genre}&with_runtime.gte=${length1}&sort_by=popularity.desc&language=en-US&page=1`;
-
+function genreSelector(){
+  var genreURL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`
   // Fetch the data from the API
-  fetch(url)
+  fetch(genreURL)
     .then(function(response){
       return response.json()
     })
     .then(function(data) {
-    
+      console.log(data);
+  })
+}
+
+genreSelector();
+
+function moviedbAPI(){
+  var API_URL = "https://api.themoviedb.org/3/discover/movie";
+  
+  // Get the filter inputs
+  var releaseYear = 2006 //document.getElementById("decade").value;
+  var genre = 'Comedy'//document.getElementById("genre").value;
+  var lengthTime = 90;
+  var nc17 = true;
+  
+  // Construct the API URL with the filter parameters
+  var discoverURL = `${API_URL}?api_key=${API_KEY}&top_rated&primary_release_year=${releaseYear}&with_genres=${genre}&with_runtime.gte=${lengthTime}&include_adult=${nc17}&append_to_response=genre&sort_by=popularity.desc&language=en-US&page=1`;
+
+  // Fetch the data from the API
+  fetch(discoverURL)
+    .then(function(response){
+      return response.json()
+    })
+    .then(function(data) {
   // Display the first movie that matches the filter criteria
     if (data.results.length > 0) {
       var movie = data.results[0];
