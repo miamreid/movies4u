@@ -5,14 +5,22 @@
     --darkblue:#355070;
     --darkpurple:#6D597A;
     --faintred:#B56576;
+	--yellow: #fffa71;
+}
+body
+{
+	font-family: sans-serif;
 }
 .main-header
 {
-    color: #FDFCDC;
+    color: var(--yellow);
     width: 100%;
     text-align: center;
     padding: 5px;
     background-color: var(--darkblue);
+	margin-top: 30px;
+	margin-bottom: 60px;
+	text-transform: uppercase;
 }
 
 /*basic reset*/
@@ -26,6 +34,7 @@ html
 	/*background = gradient + image pattern combo*/
 	background: 
 		linear-gradient(var(--darkblue), #6D597A);
+        
 }
 
 body
@@ -55,11 +64,15 @@ body
 	/*stacking fieldsets above each other*/
 	position: relative;
 }
+
+
 /*Hide all except first fieldset*/
 #msform fieldset:not(:first-of-type)
 {
-	display: none;
+	 /* display: none; /*Show only the first fieldset/question*/
 }
+
+
 .user-input
 {
     display: inline-block;
@@ -96,7 +109,7 @@ body
 }
 #msform .action-button:hover, #msform .action-button:focus
 {
-    background-color: #FDFCDC;
+    background-color: var(--yellow);
     color: var(--darkblue);
 	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
@@ -130,7 +143,7 @@ body
 	color: white;
 	text-transform: uppercase;
 	font-size: 9px;
-	width: 15%;
+	width: 25%;
 	float: left;
 	position: relative;
     text-align: center;
@@ -169,7 +182,7 @@ body
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
-	background: #FDFCDC;
+	background: var(--yellow);
 	color: var(--darkblue);
 }
 .min-length
@@ -179,4 +192,94 @@ body
 .movie-slider::-webkit-slider-thumb
 {
     background: var(--faintred);
+}
+
+/*-----------------------------------------------Results CSS-------------------------------------------*/
+
+aside /*Filters area on the left side*/
+{
+	width: 50vh;
+	height: 100vh;
+	background-color: var(--darkblue);
+	padding-top: 2vh;
+	color: white;
+	display: inline-block;
+	justify-content: center;
+	text-align: center;
+	box-shadow: 5px 0px 20px #141b22;
+}
+.filters /*text 'Filter'*/
+{
+	font-size: 20px;
+}
+.results-field-selector /*Genre and Decade text and selectors*/
+{
+	display: block;
+	padding: 1vh;
+}
+.saved-search button /*Buttons for previous searches*/
+{
+	width: 40vh;
+	height: 3vh;
+	border: var(--faintred);
+	border-radius: 30px;
+	display: inline-block;
+	color: white;
+	background-color: var(--faintred);
+	margin: 1vh;
+}
+.saved-search button:hover
+{
+	background-color: var(--yellow);
+    color: var(--darkblue);
+}
+/*----------------Styling Slider----------------*/
+.slidecontainer .slider[type="range"]
+{
+	-webkit-appearance: none; /*getting rid of the default appearance*/
+}
+
+.slidecontainer .slider[type="range"]:focus
+{
+	outline: none; /*getting rid of the default appearance*/
+}
+
+/*styling the track*/
+.slidecontainer .slider[type="range"]::-webkit-slider-runnable-track 
+{
+	background: var(--darkpurple);
+	height: 5px;
+}
+
+.slidecontainer .slider[type="range"]::-moz-range-track 
+{
+	background: var(--darkpurple);
+	height: 5px;
+}
+
+/*styling the thumb*/
+.slidecontainer .slider[type="range"]::-webkit-slider-thumb
+{
+	-webkit-appearance: none;
+	height: 15px;
+	width: 15px;
+	background: var(--yellow);
+	margin-top: -5px;
+	border: solid var(--yellow) 3px;
+	border-radius: 50%;
+}
+
+.slidecontainer .slider[type="range"]::-moz-range-thumb 
+{
+	height: 15px;
+	width: 15px;
+	background: var(--yellow);
+	margin-top: -5px;
+	border: solid var(--yellow) 3px;
+	border-radius: 50%;
+}
+
+.results-field-selector option
+{
+	background-color: #27AE60;
 }
