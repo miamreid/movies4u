@@ -1,56 +1,56 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-:root
-{
-    --darkblue:#355070;
-    --darkpurple:#6D597A;
-    --faintred:#B56576;
+:root {
+	--darkblue: #355070;
+	--darkpurple: #6D597A;
+	--faintred: #B56576;
 	--yellow: #fffa71;
 }
-body
-{
+
+body {
 	font-family: sans-serif;
 }
-.main-header
-{
-    color: var(--yellow);
-    width: 100%;
-    text-align: center;
-    padding: 5px;
-    background-color: var(--darkblue);
+
+.main-header {
+	color: var(--yellow);
+	width: 100%;
+	text-align: center;
+	padding: 5px;
+	background-color: var(--darkblue);
 	margin-top: 30px;
 	margin-bottom: 60px;
 	text-transform: uppercase;
 }
 
 /*basic reset*/
-* {margin: 0; padding: 0;}
+* {
+	margin: 0;
+	padding: 0;
+}
 
-html
-{
+html {
 	height: 100%;
 	/*Image only BG fallback*/
-	
+
 	/*background = gradient + image pattern combo*/
-	background: 
+	background:
 		linear-gradient(var(--darkblue), #6D597A);
-        
+
 }
 
-body
-{
+body {
 	font-family: montserrat, arial, verdana;
 }
+
 /*form styles*/
-#msform
-{
+#msform {
 	width: 400px;
 	margin: 50px auto;
 	text-align: center;
 	position: relative;
 }
-#msform fieldset
-{
+
+#msform fieldset {
 	background: var(--darkblue);
 	border: 0 none;
 	border-radius: 3px;
@@ -58,30 +58,32 @@ body
 	padding: 30% 30px;
 	box-sizing: border-box;
 	width: 80%;
-    height: 50vh;
+	height: 50vh;
 	margin: 20% 10%;
-	
+
 	/*stacking fieldsets above each other*/
 	position: relative;
 }
 
-
-/*Hide all except first fieldset*/
-#msform fieldset:not(:first-of-type)
-{
-	 /* display: none; /*Show only the first fieldset/question*/
+.hidden {
+	display: none;
 }
 
+/* Hide all except first fieldset
+#msform fieldset:not(:first-of-type) {
+	display: none;
+	/*Show only the first fieldset/question*/
 
-.user-input
-{
-    display: inline-block;
-    width: 60%;
-    margin-bottom: 20px;
+
+.user-input {
+	display: inline-block;
+	width: 60%;
+	margin-bottom: 20px;
 }
+
 /*inputs*/
-#msform input, #msform textarea
-{
+#msform input,
+#msform textarea {
 	padding: 15px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
@@ -92,9 +94,9 @@ body
 	color: #2C3E50;
 	font-size: 13px;
 }
+
 /*buttons*/
-#msform .action-button
-{
+#msform .action-button {
 	width: 100px;
 	background: #B56576;
 	font-weight: bold;
@@ -104,52 +106,53 @@ body
 	cursor: pointer;
 	padding: 10px;
 	margin: 10px 5px;
-    text-decoration: none;
-    font-size: 14px;
+	text-decoration: none;
+	font-size: 14px;
 }
-#msform .action-button:hover, #msform .action-button:focus
-{
-    background-color: var(--yellow);
-    color: var(--darkblue);
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+	background-color: var(--yellow);
+	color: var(--darkblue);
 	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
+
 /*headings*/
-.fs-title
-{
+.fs-title {
 	font-size: 15px;
 	text-transform: uppercase;
 	color: white;
 	margin-bottom: 30px;
 }
-.fs-subtitle
-{
+
+.fs-subtitle {
 	font-weight: normal;
 	font-size: 13px;
 	color: #666;
 	margin-bottom: 20px;
 }
+
 /*progressbar*/
-#progressbar
-{
+#progressbar {
 	margin-bottom: 30px;
-    width: 100%;
+	width: 100%;
 	overflow: hidden;
 	/*CSS counters to number the steps*/
 	counter-reset: step;
 }
-#progressbar li
-{
+
+#progressbar li {
 	list-style-type: none;
 	color: white;
 	text-transform: uppercase;
-	font-size: 9px;
+	font-size: 12px;
 	width: 25%;
 	float: left;
 	position: relative;
-    text-align: center;
+	text-align: center;
 }
-#progressbar li:before
-{
+
+#progressbar li:before {
 	content: counter(step);
 	counter-increment: step;
 	width: 30px;
@@ -160,44 +163,50 @@ body
 	background: #6D597A;
 	border-radius: 3px;
 	margin: 0 auto 5px auto;
-    text-align: center;
+	text-align: center;
+
 }
+
 /*progressbar connectors*/
-#progressbar li:after
-{
+#progressbar li:after {
 	content: '';
 	width: 100%;
 	height: 2px;
 	background: white;
 	position: absolute;
 	left: -50%;
-	top: 9px;
-	z-index: -1; /*put it behind the numbers*/
+	top: 14px;
+	z-index: -1;
+	/*put it behind the numbers*/
 }
-#progressbar li:first-child:after
-{
+
+#progressbar li:first-child:after {
 	/*connector not needed before the first step*/
-	content: none; 
+	content: none;
 }
+
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
-#progressbar li.active:before,  #progressbar li.active:after{
+#progressbar li.active:before,
+#progressbar li.active:after {
 	background: var(--yellow);
 	color: var(--darkblue);
 }
-.min-length
-{
-    color: white;
+
+.min-length {
+	color: white;
 }
-.movie-slider::-webkit-slider-thumb
-{
-    background: var(--faintred);
+
+.movie-slider::-webkit-slider-thumb {
+	background: var(--faintred);
 }
 
 /*-----------------------------------------------Results CSS-------------------------------------------*/
 
-aside /*Filters area on the left side*/
-{
+aside
+
+/*Filters area on the left side*/
+	{
 	width: 50vh;
 	height: 100vh;
 	background-color: var(--darkblue);
@@ -208,17 +217,26 @@ aside /*Filters area on the left side*/
 	text-align: center;
 	box-shadow: 5px 0px 20px #141b22;
 }
-.filters /*text 'Filter'*/
-{
+
+.filters
+
+/*text 'Filter'*/
+	{
 	font-size: 20px;
 }
-.results-field-selector /*Genre and Decade text and selectors*/
-{
+
+.results-field-selector
+
+/*Genre and Decade text and selectors*/
+	{
 	display: block;
 	padding: 1vh;
 }
-.saved-search button /*Buttons for previous searches*/
-{
+
+.saved-search button
+
+/*Buttons for previous searches*/
+	{
 	width: 40vh;
 	height: 3vh;
 	border: var(--faintred);
@@ -228,38 +246,36 @@ aside /*Filters area on the left side*/
 	background-color: var(--faintred);
 	margin: 1vh;
 }
-.saved-search button:hover
-{
+
+.saved-search button:hover {
 	background-color: var(--yellow);
-    color: var(--darkblue);
-}
-/*----------------Styling Slider----------------*/
-.slidecontainer .slider[type="range"]
-{
-	-webkit-appearance: none; /*getting rid of the default appearance*/
+	color: var(--darkblue);
 }
 
-.slidecontainer .slider[type="range"]:focus
-{
-	outline: none; /*getting rid of the default appearance*/
+/*----------------Styling Slider----------------*/
+.slidecontainer .slider[type="range"] {
+	-webkit-appearance: none;
+	/*getting rid of the default appearance*/
+}
+
+.slidecontainer .slider[type="range"]:focus {
+	outline: none;
+	/*getting rid of the default appearance*/
 }
 
 /*styling the track*/
-.slidecontainer .slider[type="range"]::-webkit-slider-runnable-track 
-{
+.slidecontainer .slider[type="range"]::-webkit-slider-runnable-track {
 	background: var(--darkpurple);
 	height: 5px;
 }
 
-.slidecontainer .slider[type="range"]::-moz-range-track 
-{
+.slidecontainer .slider[type="range"]::-moz-range-track {
 	background: var(--darkpurple);
 	height: 5px;
 }
 
 /*styling the thumb*/
-.slidecontainer .slider[type="range"]::-webkit-slider-thumb
-{
+.slidecontainer .slider[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	height: 15px;
 	width: 15px;
@@ -269,8 +285,7 @@ aside /*Filters area on the left side*/
 	border-radius: 50%;
 }
 
-.slidecontainer .slider[type="range"]::-moz-range-thumb 
-{
+.slidecontainer .slider[type="range"]::-moz-range-thumb {
 	height: 15px;
 	width: 15px;
 	background: var(--yellow);
@@ -279,7 +294,6 @@ aside /*Filters area on the left side*/
 	border-radius: 50%;
 }
 
-.results-field-selector option
-{
+.results-field-selector option {
 	background-color: #27AE60;
 }
