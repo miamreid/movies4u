@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,14 +18,15 @@
             <li class="active">Genre</li>
             <li>Decade</li>
             <li>Movie Length</li>
-            <li>Actors/Actresses
+            <li>Actors
             </li>
         </ul>
     </div>
     <form id="msform">
 
         <!-- fieldsets -->
-        <fieldset>
+
+        <fieldset id="prompt1" class="">
             <h2 class="fs-title">Pick the Genre</h2>
             <select class="user-input" id="user-genre">
                 <option value="28" id="28">Action</option>
@@ -49,7 +51,7 @@
             </select>
             <input type="button" name="next" id="genreButton" class="next action-button" value="Next" />
         </fieldset>
-        <fieldset>
+        <fieldset id="prompt2" class="hidden">
             <h2 class="fs-title">Choose a Decade</h2>
             <select class="user-input" id="user-decade">
                 <option value="1950s" id="1950s">1950s</option>
@@ -61,11 +63,13 @@
                 <option value="2010s" id="2010s">2010s</option>
                 <option value="2020s" id="2020s">2020s</option>
             </select>
-            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input id="previousBtn2" type="button" name="previous" class="previous action-button" value="Previous" />
             <input type="button" name="next" id="decadeButton" class="next action-button" value="Next" />
+
+       
         </fieldset>
-        <fieldset>
-            <h2 class="fs-title">Movie Length</h2>
+        <fieldset id="prompt3" class="hidden">
+            <h2 class="fs-title">Duration</h2>
             <div class="slidecontainer">
                 <Label for="slider" class="min-length">>90 minutes to 3+ hours</p>
                 <input class="slider" type="range" id="user-length" list="values" min="90" max="150" value="120" step="30">
@@ -75,18 +79,9 @@
                     <option value="150" label="2&#189; or Longer"></option>
                 </datalist>
             </div>
-            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input id="previousBtn3" type="button" name="previous" class="previous action-button" value="Previous" />
             <input type="button" name="submit" class="submit action-button" value="Submit"/>
         </fieldset>
-        <!--
-        <fieldset>
-            <h2 class="fs-title">Actors/Actresses</h2>
-            <select class="user-input"></select>
-            <h2 class="fs-title">Director</h2>
-            <select class="user-input"></select>
-            <input type="button" name="previous" class="next action-button" value="Previous" />Submit</input>
-        </fieldset>
-        -->
     </form>
     <div class="results-container">
         <div id="result1">
@@ -214,5 +209,9 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="./script.js"></script>
+
+<script src="script.js"></script>
+<script src="buttons.js"></script>
+
 </html>
+main

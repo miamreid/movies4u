@@ -160,6 +160,7 @@ function moviedbAPI(){
   })
 }
 
+
 submitBtn.addEventListener("click", moviedbAPI);
 
 //Get Stored Data
