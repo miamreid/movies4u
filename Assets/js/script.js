@@ -193,8 +193,9 @@ function moviedbAPI(){
       var result20 = document.getElementById("img-20");
       result20.src = "https://image.tmdb.org/t/p/w500" + data.results[19].poster_path;
       */
-      return window.location.assign = "./results.html";
+      
   })
+  return window.location.assign = "./results.html";
 }
 
 
