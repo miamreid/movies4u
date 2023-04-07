@@ -195,7 +195,7 @@ function moviedbAPI(){
       */
       
   })
-  return window.location.assign = "./results.html";
+  return window.location.assign("./results.html");
 }
 
 
