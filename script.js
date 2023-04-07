@@ -34,6 +34,10 @@ var API_KEY = "701ebb9db6b0f6cd175ada217a8261bb";
 var decadeDiv = document.getElementById("user-decade");
 var lengthTime = userLength;
 
+var previousBtn2 = document.querySelector("#previousBtn2");
+var previousBtn3 = document.querySelector("#previousBtn3");
+var previousBtn4 = document.querySelector("#previousBtn4");
+
 //Saves user's selected genre to local storage and passes selection to discoverURL
 function saveUserGenre() {
   var userGenre = document.getElementById("user-genre").value;
@@ -53,6 +57,12 @@ function saveUserGenre() {
 }
 
 genreBtn.addEventListener("click", saveUserGenre);
+
+function goToPrompt1() {
+  prompt1.classList.remove("hidden");
+  prompt2.classList.add("hidden");
+}
+previousBtn2.addEventListener("click", goToPrompt1);
 
 //Translates user decade selection to a random year within decade and saves it within storage
 function randomYear(min, max) {
@@ -98,6 +108,14 @@ function saveUserDecade() {
 };
 
 decadeBtn.addEventListener("click", saveUserDecade);
+
+function goToPrompt2() {
+  prompt1.classList.add("hidden");
+  prompt3.classList.add("hidden");
+  prompt2.classList.remove("hidden");
+}
+
+previousBtn3.addEventListener("click", goToPrompt2);
 
 function moviedbAPI(){
   var API_URL = "https://api.themoviedb.org/3/discover/movie";

@@ -12,7 +12,7 @@ genreButton.addEventListener("click", goToPrompt2);
 decadeButton.addEventListener("click", goToPrompt3);
 nextBtn3.addEventListener("click", goToPrompt4);
 previousBtn2.addEventListener("click", goToPrompt1);
-previousBtn3.addEventListener("click", goToPrompt2)
+previousBtn3.addEventListener("click", goToPrompt2);
 previousBtn4.addEventListener("click", goToPrompt3)
 
 function goToPrompt1() {
