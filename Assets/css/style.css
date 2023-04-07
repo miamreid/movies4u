@@ -297,3 +297,48 @@ aside
 .results-field-selector option {
 	background-color: #27AE60;
 }
+
+/*-----------------------------------------------Movie CSS-------------------------------------------*/
+.movie
+{
+	display: flex;
+	flex: 1;
+	background: #141b22;
+}
+.movie img
+{
+	border-right: solid 5px var(--darkpurple);
+	height: 100%;
+	width: 18%;
+}
+.chunk-o-text
+{
+	margin-bottom: 30px;
+}
+.movie-info
+{
+	color: white;
+	margin: 2rem;
+}
+.movie-info h3{
+	margin-top: 1rem;
+	margin-bottom: .5rem;
+	color: var(--faintred);
+}
+.movie-info h1{
+	margin-bottom: 1rem;
+	color: var(--yellow);
+}
+.movie-info button
+
+/*Buttons for previous searches*/
+{
+	width: 10vh;
+	height: 3vh;
+	border: var(--faintred);
+	border-radius: 30px;
+	display: inline-block;
+	color: white;
+	background-color: var(--faintred);
+	margin: 1vh;
+}
