@@ -363,7 +363,7 @@ aside
 
 .result-item {
 	background-color: #ffffff32;
-	background-image: url(/Assets/twilight.jpg);
+	/* background-image: url(/Assets/twilight.jpg); */
 	filter: grayscale(50%) opacity(90%);
 	background-size: 100%;
 	background-position: center;
