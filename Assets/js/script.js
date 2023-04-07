@@ -55,14 +55,18 @@ function saveUserGenre() {
   prompt2.classList.remove("hidden");
   prompt3.classList.add("hidden");
 }
-
-genreBtn.addEventListener("click", saveUserGenre);
+if (genreBtn !== null) {
+  genreBtn.addEventListener("click", saveUserGenre);
+}
 
 function goToPrompt1() {
   prompt1.classList.remove("hidden");
   prompt2.classList.add("hidden");
 }
-previousBtn2.addEventListener("click", goToPrompt1);
+
+if (previousBtn2 !== null) {
+  previousBtn2.addEventListener("click", goToPrompt1);
+}
 
 //Translates user decade selection to a random year within decade and saves it within storage
 function randomYear(min, max) {
@@ -72,28 +76,28 @@ function randomYear(min, max) {
 function saveUserDecade() {
   var userDecade = document.getElementById("user-decade").value;
   console.log(userDecade);
-  if(userDecade == "1950s") {
+  if (userDecade == "1950s") {
     releaseYear = randomYear(1950, 1959);
   }
-  if(userDecade == "1960s") {
+  if (userDecade == "1960s") {
     releaseYear = randomYear(1960, 1969);
   }
-  if(userDecade == "1970s") {
+  if (userDecade == "1970s") {
     releaseYear = randomYear(1970, 1979);
   }
-  if(userDecade == "1980s") {
+  if (userDecade == "1980s") {
     releaseYear = randomYear(1980, 1989);
   }
-  if(userDecade == "1990s") {
+  if (userDecade == "1990s") {
     releaseYear = randomYear(1990, 1999);
   }
-  if(userDecade == "2000s") {
+  if (userDecade == "2000s") {
     releaseYear = randomYear(2000, 2009);
   }
-  if(userDecade == "2010s") {
+  if (userDecade == "2010s") {
     releaseYear = randomYear(2010, 2019);
   }
-  if(userDecade == "2020s") {
+  if (userDecade == "2020s") {
     releaseYear = randomYear(2020, 2023);
   }
 
@@ -107,7 +111,9 @@ function saveUserDecade() {
   prompt3.classList.remove("hidden");
 };
 
-decadeBtn.addEventListener("click", saveUserDecade);
+if (decadeBtn !== null) {
+  decadeBtn.addEventListener("click", saveUserDecade);
+}
 
 function goToPrompt2() {
   prompt1.classList.add("hidden");
@@ -115,11 +121,14 @@ function goToPrompt2() {
   prompt2.classList.remove("hidden");
 }
 
-previousBtn3.addEventListener("click", goToPrompt2);
+if (previousBtn3 !== null) {
+  previousBtn3.addEventListener("click", goToPrompt2);
+}
 
-function moviedbAPI(){
+
+function moviedbAPI() {
   var API_URL = "https://api.themoviedb.org/3/discover/movie";
-  
+
   // Construct the API URL with the filter parameters
   lengthTime = userLength;
 
@@ -127,16 +136,16 @@ function moviedbAPI(){
 
   // Fetch the data from the API
   fetch(discoverURL)
-    .then(function(response){
+    .then(function (response) {
       return response.json()
     })
-    .then(function(data) {
+    .then(function (data) {
       console.log(data);
 
       var storeData = "DiscoverUrl";
       window.localStorage.setItem(storeData, JSON.stringify(data));
 
-      for (var i = 0; i < 19; i++){
+      for (var i = 0; i < 19; i++) {
         var result = document.getElementById("img-" + [i]);
         result.src = "https://image.tmdb.org/t/p/w500" + data.results[i].poster_path;
         var storeImagePath = "Stored Image Path-" + [i];
@@ -153,12 +162,15 @@ function moviedbAPI(){
         var storePlot = "Stored Plot-" + [i];
         localStorage.setItem(storePlot, plot.innerHTML)
       }
-  })
+    })
   return window.location.assign("./results.html");
 }
 
+if (submitBtn !== null) {
+  submitBtn.addEventListener("click", moviedbAPI);
+}
 
-submitBtn.addEventListener("click", moviedbAPI);
+//submitBtn.addEventListener("click", moviedbAPI);
 
 //Get Stored Data
 var storedGenreCode = localStorage.getItem("Stored Genre Code");
