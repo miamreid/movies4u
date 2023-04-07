@@ -47,6 +47,9 @@ function saveUserGenre() {
   console.log("User Selected Genre: " + userGenre + ", Genre Text Stored: " + genreText + ", Genre Code Stored: " + genreCode);
   genre = userGenre;
   console.log(genre);
+  prompt1.classList.add("hidden");
+  prompt2.classList.remove("hidden");
+  prompt3.classList.add("hidden");
 }
 
 genreBtn.addEventListener("click", saveUserGenre);
@@ -90,6 +93,8 @@ function saveUserDecade() {
   var storedRandomYearKey = "Random Year";
   localStorage.setItem(storedRandomYearKey, releaseYear);
   console.log("Decade: " + userDecade + ", Random Year: " + releaseYear);
+  prompt2.classList.add("hidden");
+  prompt3.classList.remove("hidden");
 };
 
 decadeBtn.addEventListener("click", saveUserDecade);
@@ -113,10 +118,24 @@ function moviedbAPI(){
       var storeData = "DiscoverUrl";
       window.localStorage.setItem(storeData, JSON.stringify(data));
 
+      for (var i = 0; i < 19; i++){
+        var result = document.getElementById("img-" + [i]);
+        result.src = "https://image.tmdb.org/t/p/w500" + data.results[i].poster_path;
+        var title = document.getElementById("title-" + [i]);
+        title.innerHTML = data.results[i].title;
+        var storedMovieId = "MovieID-" + [i];
+        var movieId = data.results[i].id;
+        localStorage.setItem (storedMovieId, movieId);
+      }
+/*
+      var storeMovieId1 = "MovieID-1";
+      var movieId1 = data.results[0].id;
+      localStorage.setItem(storeMovieId1, movieId1);
+
+     
       var result1 = document.getElementById("img-1");
       result1.src = "https://image.tmdb.org/t/p/w500" + data.results[0].poster_path;
-     // var title1=document.getElementById("title-1");
-
+      var title1=document.getElementById("title-1");
       var result2 = document.getElementById("img-2");
       result2.src = "https://image.tmdb.org/t/p/w500" + data.results[1].poster_path;
       var result3 = document.getElementById("img-3");
@@ -155,8 +174,8 @@ function moviedbAPI(){
       result19.src = "https://image.tmdb.org/t/p/w500" + data.results[18].poster_path;
       var result20 = document.getElementById("img-20");
       result20.src = "https://image.tmdb.org/t/p/w500" + data.results[19].poster_path;
-
-      //window.location.href = "results.html";
+      */
+      return window.location.assign = "./results.html";
   })
 }
 
