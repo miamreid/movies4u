@@ -56,12 +56,6 @@ html {
 
 body {
 	font-family: montserrat, arial, verdana;
-	color: white;
-	background: #6D597A;
-	border-radius: 3px;
-	border: white solid 1px;
-	margin: 0 auto 5px auto;
-	text-align: center;
 }
 
 /*form styles*/
@@ -308,12 +302,12 @@ aside {
 	margin: 1vh;
 }
 
-/*
+
 .saved-search button:hover {
 	background-color: var(--yellow);
 	color: var(--darkblue);
 }
-*/
+
 
 /*----------------Styling Slider----------------*/
 .slidecontainer .slider[type="range"] {
@@ -417,7 +411,7 @@ aside {
 	margin-top: 45px;
 	width: 80vw;
 	height: 45vw;
-	justify-content: space-evenly;
+	justify-content: flex-start;
 	align-items: center;
 	position: relative;
 }
@@ -431,8 +425,12 @@ aside {
 	box-shadow: 0 0 10px 1px rgba(19, 19, 19, 0.533);
 	margin: 10px;
 	border-radius: 10px;
-	width: 12vw;
-	height: 38vh;
+	width: 20%;
+	/*height: 38vh;*/
+}
+
+img {
+	width: 100%;
 }
 
 .result-item:hover {
@@ -456,4 +454,18 @@ aside {
 	color: white;
 	position: relative;
 	top: 75%;
+}
+
+h3{
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+p {
+	margin-top: 5px;
+	top: 75%;
+}
+
+.results-container-hidden {
+	display: none;
 }
