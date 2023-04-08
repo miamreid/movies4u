@@ -356,7 +356,7 @@ aside
 	margin-top: 45px;
 	width: 80vw;
 	height: 45vw;
-	justify-content: space-evenly;
+	justify-content: flex-start;
 	align-items: center;
 	position: relative;
 }
@@ -370,8 +370,12 @@ aside
 	box-shadow: 0 0 10px 1px rgba(19, 19, 19, 0.533);
 	margin: 10px;
 	border-radius: 10px;
-	width: 12vw;
-	height: 38vh;
+	width: 20%;
+	/*height: 38vh;*/
+}
+
+img {
+	width: 100%;
 }
 
 .result-item:hover {
@@ -389,4 +393,8 @@ aside
 	color: white;
 	position: relative;
 	top: 75%;
+}
+
+.results-container-hidden {
+	display: none;
 }
