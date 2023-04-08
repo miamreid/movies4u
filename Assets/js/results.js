@@ -5,10 +5,18 @@ var storedGenreCode = localStorage.getItem("Stored Genre Code");
 var storedDecade = localStorage.getItem("Decade Selected");
 var storedYear = localStorage.getItem("Random Year");
 var storedLength = localStorage.getItem("Stored Length");
+var storedLengthText = localStorage.getItem("Stored Length Text");
 var aside = document.querySelector(".aside-saved-search");
 var asideGenre = document.getElementById("user-genre");
 var asideDecade = document.getElementById("user-decade");
 var asideLength = document.getElementById("user-length");
+var historyBtn = document.querySelector(".history-button");
+asideGenre.innerHTML = "Genre: " + storedGenre;
+asideDecade.innerHTML = "Decade: " + storedDecade;
+asideLength.innerHTML = "Duration: " + storedLengthText;
+historyBtn.innerHTML = storedGenre + ", " + storedDecade + ", " + storedLengthText;
+historyBtn.addEventListener("click", recallSearch);
+
 
 function setData() {
   for(var i = 0; i < 20; i++) {
@@ -19,9 +27,6 @@ function setData() {
     var movieTitle = document.getElementById("title-" + [i]);
     movieTitle.textContent = storedMovieTitle;
   }
-  asideGenre.innerHTML = "Genre: " + storedGenre;
-  asideDecade.innerHTML = "Decade: " + storedDecade;
-  asideLength.innerHTML = "Duration: " + storedLength;
 }
 
 setData();
@@ -39,18 +44,6 @@ function recallSearch() {
     })
     return window.location.assign("./results.html");
   };
-  
-function savedSearches() {
-  var historyBtn = document.createElement("button");
-  historyBtn.textContent = storedGenre + ", " + storedDecade;
-  historyBtn.setAttribute("class", "saved-search");
-  historyBtn.addEventListener("click", recallSearch);
-  aside.append(historyBtn);
-}
-
-savedSearches();
-
-
 
 function getNYTAPI() {
     var requestUrl = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=twilight&api-key=${keyNYT}`;
