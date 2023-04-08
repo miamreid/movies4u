@@ -27,12 +27,13 @@ var submitBtn = document.querySelector(".submit");
 var genreBtn = document.querySelector("#genreButton");
 var genreDiv = document.getElementById("user-genre");
 var releaseYear;
+var lengthText;
+var lengthTime;
 var decadeBtn = document.querySelector("#decadeButton");
-var userLength = document.getElementById("user-length").value;
+var lengthBtn = document.getElementById("lengthButton");
 
 var API_KEY = "701ebb9db6b0f6cd175ada217a8261bb";
 var decadeDiv = document.getElementById("user-decade");
-var lengthTime = userLength;
 
 var previousBtn2 = document.querySelector("#previousBtn2");
 var previousBtn3 = document.querySelector("#previousBtn3");
@@ -54,6 +55,7 @@ function saveUserGenre() {
   prompt1.classList.add("hidden");
   prompt2.classList.remove("hidden");
   prompt3.classList.add("hidden");
+  prompt4.classList.add("hidden");
 }
 genreBtn.addEventListener("click", saveUserGenre);
 
@@ -116,12 +118,55 @@ function goToPrompt2() {
 
 previousBtn3.addEventListener("click", goToPrompt2);
 
+function saveUserLength() {
+  var userLength = document.getElementById("user-length").value;
+  console.log(userLength);
+
+  if(userLength = 90) {
+    lengthText = "Short";
+  }
+  if(userLength = 120) {
+    lengthText = "Average";
+  }
+  if(userLength = 150) {
+    lengthText = "Long"
+  }
+
+  var storedLengthTextKey = "Stored Length Text";
+  localStorage.setItem(storedLengthTextKey, lengthText);
+  lengthTime = userLength;
+  var lengthKey = "Stored Length";
+  localStorage.setItem(lengthKey, lengthTime);
+
+  prompt3.classList.add("hidden");
+  prompt4.classList.remove("hidden");
+};
+
+function goToPrompt3() {
+  prompt1.classList.add("hidden");
+  prompt2.classList.add("hidden");
+  prompt3.classList.remove("hidden");
+  prompt4.classList.add("hidden");
+}
+
+previousBtn4.addEventListener("click", goToPrompt3);
 
 function moviedbAPI() {
+  var storedGenre = localStorage.getItem("Genre Text");
+  var storedDecade = localStorage.getItem("Decade Selected");
+  var storedLength = localStorage.getItem("Stored Length");
+
+  var resultsGenre = document.querySelector(".genre");
+  var resultsDecade = document.querySelector(".decade");
+  var resultsDuration = document.querySelector(".duration");
+
+  resultsGenre.innerHTML = "Genre: " + storedGenre;
+  resultsDecade.innerHTML = "Decade: " + storedDecade;
+  resultsDuration.innerHTML = "Duration: " + storedLength;
+  
   var API_URL = "https://api.themoviedb.org/3/discover/movie";
 
   // Construct the API URL with the filter parameters
-  lengthTime = userLength;
 
   var discoverURL = `${API_URL}?api_key=${API_KEY}&top_rated&primary_release_year=${releaseYear}&with_genres=${genre}&with_runtime.gte=${lengthTime}&include_adult=false&sort_by=popularity.desc&original_language=en-US&watch_region=north%20america&page=1`;
 
@@ -155,39 +200,11 @@ function moviedbAPI() {
     })
 }
 
-//if (submitBtn !== null) {
-  //submitBtn.addEventListener("click", moviedbAPI);
-//}
-
-decadeBtn.addEventListener("click", moviedbAPI);
+lengthBtn.addEventListener("click", saveUserLength);
+lengthBtn.addEventListener("click", moviedbAPI);
 
 function redirect() {
   return window.location.assign("./results.html");
 }
 
 submitBtn.addEventListener("click", redirect);
-
-
-
-
-/*
-  result1 = data.results[0].title;
-  console.log(result1);
-  img1.src = "https://image.tmdb.org/t/p/w500" + data.results[0].poster_path;
-
-function genreSelector(){
-  var genreURL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`
-  // Fetch the data from the API
-  fetch(genreURL)
-    .then(function(response){
-      return response.json()
-    })
-    .then(function(data) {
-      for (var i = 0; i < 19; i++){
-        console.log(data.genres[i].id + " " + data.genres[i].name);
-      }
-  })
-}
-
-genreSelector();
-*/
