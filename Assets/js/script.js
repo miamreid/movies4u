@@ -55,18 +55,13 @@ function saveUserGenre() {
   prompt2.classList.remove("hidden");
   prompt3.classList.add("hidden");
 }
-if (genreBtn !== null) {
-  genreBtn.addEventListener("click", saveUserGenre);
-}
+genreBtn.addEventListener("click", saveUserGenre);
 
 function goToPrompt1() {
   prompt1.classList.remove("hidden");
   prompt2.classList.add("hidden");
 }
-
-if (previousBtn2 !== null) {
   previousBtn2.addEventListener("click", goToPrompt1);
-}
 
 //Translates user decade selection to a random year within decade and saves it within storage
 function randomYear(min, max) {
@@ -111,9 +106,7 @@ function saveUserDecade() {
   prompt3.classList.remove("hidden");
 };
 
-if (decadeBtn !== null) {
   decadeBtn.addEventListener("click", saveUserDecade);
-}
 
 function goToPrompt2() {
   prompt1.classList.add("hidden");
@@ -121,9 +114,7 @@ function goToPrompt2() {
   prompt2.classList.remove("hidden");
 }
 
-if (previousBtn3 !== null) {
-  previousBtn3.addEventListener("click", goToPrompt2);
-}
+previousBtn3.addEventListener("click", goToPrompt2);
 
 
 function moviedbAPI() {
@@ -132,7 +123,7 @@ function moviedbAPI() {
   // Construct the API URL with the filter parameters
   lengthTime = userLength;
 
-  var discoverURL = `${API_URL}?api_key=${API_KEY}&top_rated&primary_release_year=${releaseYear}&with_genres=${genre}&with_runtime.gte=${lengthTime}&include_adult=false&sort_by=popularity.desc&language=en-US&watch_region=north%20america&page=1`;
+  var discoverURL = `${API_URL}?api_key=${API_KEY}&top_rated&primary_release_year=${releaseYear}&with_genres=${genre}&with_runtime.gte=${lengthTime}&include_adult=false&sort_by=popularity.desc&original_language=en-US&watch_region=north%20america&page=1`;
 
   // Fetch the data from the API
   fetch(discoverURL)
@@ -142,10 +133,10 @@ function moviedbAPI() {
     .then(function (data) {
       console.log(data);
 
-      var storeData = "DiscoverUrl";
-      window.localStorage.setItem(storeData, JSON.stringify(data));
+      //var storeData = "DiscoverUrl";
+      //window.localStorage.setItem(storeData, JSON.stringify(data));
 
-      for (var i = 0; i < 19; i++) {
+      for (var i = 0; i < 20; i++) {
         var result = document.getElementById("img-" + [i]);
         result.src = "https://image.tmdb.org/t/p/w500" + data.results[i].poster_path;
         var storeImagePath = "Stored Image Path-" + [i];
@@ -157,28 +148,24 @@ function moviedbAPI() {
         var storeTitle = "Stored Title-" + [i];
         localStorage.setItem(storeTitle, title.innerHTML);
 
-        var plot = document.getElementById("plot-" + [i]);
-        plot.innerHTML = data.results[i].overview;
+        var plot = data.results[i].overview;
         var storePlot = "Stored Plot-" + [i];
-        localStorage.setItem(storePlot, plot.innerHTML)
+        localStorage.setItem(storePlot, plot)
       }
     })
+}
+
+//if (submitBtn !== null) {
+  //submitBtn.addEventListener("click", moviedbAPI);
+//}
+
+decadeBtn.addEventListener("click", moviedbAPI);
+
+function redirect() {
   return window.location.assign("./results.html");
 }
 
-if (submitBtn !== null) {
-  submitBtn.addEventListener("click", moviedbAPI);
-}
-
-//submitBtn.addEventListener("click", moviedbAPI);
-
-//Get Stored Data
-var storedGenreCode = localStorage.getItem("Stored Genre Code");
-var storedGenreText = localStorage.getItem("Genre Text");
-var storedDecadeSelection = localStorage.getItem("Decade Selected");
-var storedRandomYear = localStorage.getItem("Random Year");
-
-
+submitBtn.addEventListener("click", redirect);
 
 
 

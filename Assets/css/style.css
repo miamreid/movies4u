@@ -413,7 +413,7 @@ aside
 	margin-top: 45px;
 	width: 80vw;
 	height: 45vw;
-	justify-content: space-evenly;
+	justify-content: flex-start;
 	align-items: center;
 	position: relative;
 }
@@ -427,8 +427,12 @@ aside
 	box-shadow: 0 0 10px 1px rgba(19, 19, 19, 0.4);
 	margin: 10px;
 	border-radius: 10px;
-	width: 12vw;
-	height: 38vh;
+	width: 20%;
+	/*height: 38vh;*/
+}
+
+img {
+	width: 100%;
 }
 
 .result-item:hover {
@@ -449,6 +453,7 @@ aside
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
 	color: white;
 	position: relative;
+
 	top: 62%;
 	height: 140px;
 }
@@ -461,4 +466,11 @@ h3 {
 
 p {
 	margin-top: 5px;
+
+	top: 75%;
+}
+
+.results-container-hidden {
+	display: none;
+
 }
