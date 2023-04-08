@@ -1,3 +1,15 @@
+var keyNYT = "oxAVFGzkee0zA6fTb7Q4lA32umzPGXjC"
+
+var storedGenre = localStorage.getItem("Genre Text");
+var storedGenreCode = localStorage.getItem("Stored Genre Code");
+var storedDecade = localStorage.getItem("Decade Selected");
+var storedYear = localStorage.getItem("Random Year");
+var storedLength = localStorage.getItem("Stored Length");
+var aside = document.querySelector(".aside-saved-search");
+var asideGenre = document.getElementById("user-genre");
+var asideDecade = document.getElementById("user-decade");
+var asideLength = document.getElementById("user-length");
+
 function setData() {
   for(var i = 0; i < 20; i++) {
     var storedPosterPath = localStorage.getItem("Stored Image Path-" + [i]);
@@ -7,17 +19,12 @@ function setData() {
     var movieTitle = document.getElementById("title-" + [i]);
     movieTitle.textContent = storedMovieTitle;
   }
+  asideGenre.innerHTML = "Genre: " + storedGenre;
+  asideDecade.innerHTML = "Decade: " + storedDecade;
+  asideLength.innerHTML = "Duration: " + storedLength;
 }
 
 setData();
-
-var keyNYT = "oxAVFGzkee0zA6fTb7Q4lA32umzPGXjC"
-
-var storedGenre = localStorage.getItem("Genre Text Key");
-var storedGenreCode = localStorage.getItem("Stored Genre Code");
-var storedDecade = localStorage.getItem("Decade Selected");
-var storedYear = localStorage.getItem("Random Year");
-var aside = document.querySelector(".aside-saved-search");
 
 function recallSearch() {
   

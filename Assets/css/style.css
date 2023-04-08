@@ -75,7 +75,6 @@ body {
 	padding: 30% 30px;
 	box-sizing: border-box;
 	width: 80%;
-	height: 50vh;
 	margin: 20% 10%;
 
 	/*stacking fieldsets above each other*/
@@ -91,6 +90,9 @@ body {
 	display: none;
 	/*Show only the first fieldset/question*/
 
+#prompt4 {
+	color: white;
+}
 
 .user-input {
 	padding: 10px;
@@ -382,7 +384,11 @@ aside {
 .results-field-selector option {
 	background-color: #27AE60;
 }
-
+option {
+    background-color: #B56576;
+    padding-right: 20px;
+    font-size: 18px;
+}
 
 /*-----------------------------------------------Movie CSS-------------------------------------------*/
 .movie {
