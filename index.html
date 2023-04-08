@@ -17,9 +17,8 @@
         <ul id="progressbar">
             <li class="active">Genre</li>
             <li>Decade</li>
-            <li>Movie Length</li>
-            <li>Actors
-            </li>
+            <li>Duration</li>
+            <li>Submit</li>
         </ul>
     </div>
     <form id="msform">
@@ -27,7 +26,7 @@
         <!-- fieldsets -->
 
         <fieldset id="prompt1" class="">
-            <h2 class="fs-title">Pick the Genre</h2>
+            <h2 class="fs-title">Choose a Genre</h2>
             <select class="user-input" id="user-genre">
                 <option value="28" id="28">Action</option>
                 <option value="12" id="12">Adventure</option>
@@ -71,17 +70,41 @@
         <fieldset id="prompt3" class="hidden">
             <h2 class="fs-title">Duration</h2>
             <div class="slidecontainer">
-                <Label for="slider" class="min-length">>90 minutes to 3+ hours</p>
-                    <input class="slider" type="range" id="user-length" list="values" min="90" max="150" value="120"
-                        step="30">
-                    <datalist id="values">
-                        <option value="90" label="90 Minutes or Less"></option>
-                        <option value="120" label="Up to 2&#189;"></option>
-                        <option value="150" label="2&#189; or Longer"></option>
-                    </datalist>
+                <Label for="slider" class="min-length">
+                    <p> Short</p>
+                    <p> Average </p>
+                    <p> Long</p>
+                </Label>
+                <input class="slider" type="range" id="user-length" list="values" min="90" max="150" value="120"
+                    step="30">
+                <datalist id="values">
+                    <option value="90" label="90 Minutes or Less"></option>
+                    <option value="120" label="Up to 2&#189;"></option>
+                    <option value="150" label="2&#189; or Longer"></option>
+                </datalist>
             </div>
             <input id="previousBtn3" type="button" name="previous" class="previous action-button" value="Previous" />
-            <input type="button" name="submit" class="submit action-button" value="Submit" />
+            <input type="button" name="next" id="decadeButton" class="next action-button" value="Next" />
+
+        </fieldset>
+        <fieldset id="prompt4" class="">
+            <h2 class="fs-title">Submit</h2>
+            <div class="current-filters">
+                <div class="filters">Current Filters</div>
+                <div class="results-field-selector" id="user-genre">Genre:
+
+                </div>
+                <div class="results-field-selector" id="user-decade">Decade:
+
+                </div>
+                <div class="results-field-selector">Duration:
+
+                </div>
+            </div>
+
+            <div>
+                <input type="button" name="submit" class="submit action-button" value="Submit" />
+            </div>
         </fieldset>
     </form>
     <div class="results-container-hidden">
