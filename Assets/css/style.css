@@ -124,6 +124,7 @@ body {
 	margin: 10px 5px;
 	text-decoration: none;
 	font-size: 14px;
+	border-radius: 50px;
 }
 
 #msform .action-button:hover,
