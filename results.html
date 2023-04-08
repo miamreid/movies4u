@@ -10,7 +10,7 @@
     <title>Movie Results</title>
 </head>
 
-<body class="results-page">
+<body class="results-page" onload="savedSearches()">
     <aside>
         <div class="filters">Filters</div>
         <div class="results-field-selector" id="user-genre">Genre:
@@ -60,10 +60,8 @@
                     <option value="150" label="2&#189; or Longer"></option>
                 </datalist>
         </div>
-        <div class="saved-search">
-            <button>Saved search #1</button>
-            <button>Saved search #2</button>
-            <button>Saved search #3</button>
+        <div class="aside-saved-search">
+            <button class="saved-search">Saved Search</button>
         </div>
     </aside>
     <div class="results-container">
@@ -71,7 +69,6 @@
             <div class="description">
                 <img id="img-0" src="" alt="">
                 <h3 id="title-0">Movie Title</h3>
-                <p id="plot-0">Movie Plot</p>
                 <p id="review-0">Reviews</p>
             </div>
         </div>
@@ -79,7 +76,6 @@
             <div class="description">
                 <img id="img-1" src="" alt="">
                 <h3 id="title-1">Movie Title</h3>
-                <p id="plot-1">Movie Plot</p>
                 <p id="review-1">Reviews</p>
             </div>
         </div>
@@ -87,7 +83,6 @@
             <div class="description">
                 <img id="img-2" src="" alt="">
                 <h3 id="title-2">Movie Title</h3>
-                <p id="plot-2">Movie Plot</p>
                 <p id="review-2">Reviews</p>
             </div>
         </div>
@@ -95,7 +90,6 @@
             <div class="description">
                 <img id="img-3" src="" alt="">
                 <h3 id="title-3">Movie Title</h3>
-                <p id="plot-3">Movie Plot</p>
                 <p id="review-3">Reviews</p>
             </div>
         </div>
@@ -103,7 +97,6 @@
             <div class="description">
                 <img id="img-4" src="" alt="">
                 <h3 id="title-4">Movie Title</h3>
-                <p id="plot-4">Movie Plot</p>
                 <p id="review-4">Reviews</p>
             </div>
         </div>
@@ -111,7 +104,6 @@
             <div class="description">
                 <img id="img-5" src="" alt="">
                 <h3 id="title-5">Movie Title</h3>
-                <p id="plot-5">Movie Plot</p>
                 <p id="review-5">Reviews</p>
             </div>
         </div>
@@ -119,7 +111,6 @@
             <div class="description">
                 <img id="img-6" src="" alt="">
                 <h3 id="title-6">Movie Title</h3>
-                <p id="plot-6">Movie Plot</p>
                 <p id="review-6">Reviews</p>
             </div>
         </div>
@@ -127,7 +118,6 @@
             <div class="description">
                 <img id="img-7" src="" alt="">
                 <h3 id="title-7">Movie Title</h3>
-                <p id="plot-7">Movie Plot</p>
                 <p id="review-7">Reviews</p>
             </div>
         </div>
@@ -135,7 +125,6 @@
             <div class="description">
                 <img id="img-8" src="" alt="">
                 <h3 id="title-8">Movie Title</h3>
-                <p id="plot-8">Movie Plot</p>
                 <p id="review-8">Reviews</p>
             </div>
         </div>
@@ -143,7 +132,6 @@
             <div class="description">
                 <img id="img-9" src="" alt="">
                 <h3 id="title-9">Movie Title</h3>
-                <p id="plot-9">Movie Plot</p>
                 <p id="review-9">Reviews</p>
             </div>
         </div>
@@ -151,6 +139,6 @@
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="Assets/js/script.js"></script>
+<script src="./Assets/js/results.js"></script>
 
 </html>
