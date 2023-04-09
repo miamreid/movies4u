@@ -39,6 +39,10 @@ var previousBtn2 = document.querySelector("#previousBtn2");
 var previousBtn3 = document.querySelector("#previousBtn3");
 var previousBtn4 = document.querySelector("#previousBtn4");
 
+var progressBar = document.querySelectorAll("ul > li");
+console.log(progressBar[0]);
+
+
 //Saves user's selected genre to local storage and passes selection to discoverURL
 function saveUserGenre() {
   var userGenre = document.getElementById("user-genre").value;
@@ -52,6 +56,10 @@ function saveUserGenre() {
   console.log("User Selected Genre: " + userGenre + ", Genre Text Stored: " + genreText + ", Genre Code Stored: " + genreCode);
   genre = userGenre;
   console.log(genre);
+  progressBar[0].classList.remove('active');
+  progressBar[1].classList.add('active');
+  progressBar[3].classList.remove('active');
+  progressBar[2].classList.remove('active');
   prompt1.classList.add("hidden");
   prompt2.classList.remove("hidden");
   prompt3.classList.add("hidden");
@@ -60,6 +68,10 @@ function saveUserGenre() {
 genreBtn.addEventListener("click", saveUserGenre);
 
 function goToPrompt1() {
+  progressBar[0].classList.add('active');
+  progressBar[1].classList.remove('active');
+  progressBar[2].classList.remove('active');
+  progressBar[3].classList.remove('active');
   prompt1.classList.remove("hidden");
   prompt2.classList.add("hidden");
   prompt4.classList.add("hidden");
@@ -105,6 +117,10 @@ function saveUserDecade() {
   var storedRandomYearKey = "Random Year";
   localStorage.setItem(storedRandomYearKey, releaseYear);
   console.log("Decade: " + userDecade + ", Random Year: " + releaseYear);
+  progressBar[0].classList.remove('active');
+  progressBar[1].classList.remove('active');
+  progressBar[2].classList.add('active');
+  progressBar[3].classList.remove('active');
   prompt2.classList.add("hidden");
   prompt3.classList.remove("hidden");
 };
@@ -112,6 +128,10 @@ function saveUserDecade() {
   decadeBtn.addEventListener("click", saveUserDecade);
 
 function goToPrompt2() {
+  progressBar[0].classList.remove('active');
+  progressBar[1].classList.add('active');
+  progressBar[2].classList.remove('active');
+  progressBar[3].classList.remove('active');
   prompt1.classList.add("hidden");
   prompt3.classList.add("hidden");
   prompt2.classList.remove("hidden");
@@ -140,11 +160,19 @@ function saveUserLength() {
   var lengthKey = "Stored Length";
   localStorage.setItem(lengthKey, lengthTime);
 
+  progressBar[0].classList.remove('active');
+  progressBar[1].classList.remove('active');
+  progressBar[2].classList.remove('active');
+  progressBar[3].classList.add('active');
   prompt3.classList.add("hidden");
   prompt4.classList.remove("hidden");
 };
 
 function goToPrompt3() {
+  progressBar[0].classList.remove('active');
+  progressBar[1].classList.remove('active');
+  progressBar[3].classList.add('active');
+  progressBar[2].classList.remove('active');
   prompt1.classList.add("hidden");
   prompt2.classList.add("hidden");
   prompt3.classList.remove("hidden");
