@@ -7,13 +7,6 @@
 	--yellow: #fffa71;
 }
 
-.results-page {
-	font-family: sans-serif;
-	display: flex;
-	align-items: top;
-	justify-content: left;
-}
-
 .main-header {
 	color: var(--yellow);
 	width: 100%;
@@ -22,20 +15,6 @@
 	background-color: var(--darkblue);
 	margin-top: 30px;
 	margin-bottom: 60px;
-	text-transform: uppercase;
-}
-
-.aside-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font-size: 32px;
-	font-weight: 100;
-	color: var(--yellow);
-	width: 20vw;
-	background-color: var(--darkblue);
-	margin-top: 30px;
-	margin-bottom: 50px;
 	text-transform: uppercase;
 }
 
@@ -52,6 +31,7 @@ html {
 	/*background = gradient + image pattern combo*/
 	background:
 		linear-gradient(var(--darkblue), #6D597A);
+		background-attachment: fixed;
 
 }
 
@@ -219,6 +199,7 @@ body {
 	content: none;
 }
 
+
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,
@@ -226,6 +207,7 @@ body {
 	background: var(--yellow);
 	color: var(--darkblue);
 }
+
 
 :before {
 	background-color: #27AE60;
@@ -250,18 +232,38 @@ body {
 }
 
 /*-----------------------------------------------Results CSS-------------------------------------------*/
-/*Filters area on the left side*/
 
+.results-page {
+	font-family: sans-serif;
+	display: flex;
+	align-items: top;
+	justify-content: left;
+}
+
+/*Filters area on the left side*/
 aside {
-	width: 45vh;
+	width: 20%;
 	height: 97vh;
 	padding: 15px;
 	background-color: var(--darkblue);
 	color: white;
+	position: fixed;
 	display: inline-block;
 	justify-content: center;
 	text-align: center;
 	box-shadow: 5px 0px 20px #141b22;
+}
+
+.aside-header {
+	text-align: center;
+	font-size: 32px;
+	font-weight: 100;
+	color: var(--yellow);
+	width: 20vw;
+	background-color: var(--darkblue);
+	margin-top: 30px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
 }
 
 .start-over-btn {
@@ -320,7 +322,7 @@ aside {
 }
 
 .saved-search button {
-	width: 36vh;
+	width: 80%;
 	height: 4vh;
 	border: var(--faintred);
 	border-radius: 30px;
@@ -444,8 +446,9 @@ option {
 	flex-wrap: wrap;
 	margin: 30px;
 	margin-top: 45px;
-	width: 80vw;
-	height: 45vw;
+	margin-left: 25%;
+	max-width: 90%;
+	max-height: 45vw;
 	justify-content: flex-start;
 	align-items: center;
 	position: relative;
@@ -461,6 +464,7 @@ option {
 	margin: 10px;
 	border-radius: 10px;
 	width: 20%;
+	min-width: 20%;
 	/*height: 38vh;*/
 }
 
@@ -504,3 +508,46 @@ p {
 .results-container-hidden {
 	display: none;
 }
+
+/*-----------------------------------------------Responsive CSS-------------------------------------------*/
+/*------------------------------------------Making all media Queries--------------------------------------*/
+@media screen and (max-width: 800px) {
+	/*------------------------------------------Results Page--------------------------------------*/
+	aside{
+	  width: 100%;
+	  height: 50vh;
+	  display: block;
+	  position: absolute;
+	}
+	.results-container{
+		width: 100vw;
+		margin-top: 80vh;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin-left: 20px;
+		margin-right: 20px;
+		margin-bottom: 20px;
+		margin-top: 60vh;
+	}
+	.result-item{
+		align-items: center;
+		width: 100%;
+		padding-top: 0%;
+	}
+
+	.aside-header{
+		text-align: center;
+	}
+	.saved-search{
+		margin: auto;
+		width: 40vw;
+	}
+	.start-over-btn{
+		width: 40vw;
+	}
+	.current-filters{
+		width: 60vw;
+		text-align: center;
+		margin: auto;
+	}
+  }

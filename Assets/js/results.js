@@ -68,5 +68,8 @@ function getNYTAPI() {
 
 getNYTAPI();
 
-
+//Results page needs to bring up the movie page when you click a movie.
+//Movie page needs to be updated with the info of the movie clicked
+//There needs to be a button to go back to the results page so the user can go back to where they left off.
+//Change the background of the numbers on the home page.
 
