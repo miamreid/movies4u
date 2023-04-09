@@ -6,15 +6,22 @@ var storedDecade = localStorage.getItem("Decade Selected");
 var storedYear = localStorage.getItem("Random Year");
 var storedLength = localStorage.getItem("Stored Length");
 var storedLengthText = localStorage.getItem("Stored Length Text");
-var aside = document.querySelector(".aside-saved-search");
+var aside = document.querySelector(".saved-search");
 var asideGenre = document.getElementById("user-genre");
 var asideDecade = document.getElementById("user-decade");
 var asideLength = document.getElementById("user-length");
 var historyBtn = document.querySelector(".history-button");
 var searchBtn = document.querySelector(".submit");
+var startOverBtn = document.querySelector(".start-over-btn");
 
-historyBtn.innerHTML = storedGenre + ", " + storedDecade + ", " + storedLengthText;
+historyBtn.innerHTML = storedGenre + ", " + storedDecade + ", " + storedLengthText + " Length Movie";
 // historyBtn.addEventListener("click", recallSearch);
+
+function startOver() {
+  return window.location.assign("./index.html");
+}
+
+startOverBtn.addEventListener("click", startOver);
 
 function newSearch() {
 
@@ -93,7 +100,7 @@ function newSearch() {
   console.log(storedYear);
   console.log(storedGenreCode);
   console.log(storedLength);
-  
+
   var API_KEY = "701ebb9db6b0f6cd175ada217a8261bb";
 
   var API_URL = "https://api.themoviedb.org/3/discover/movie";
@@ -124,9 +131,97 @@ function newSearch() {
           localStorage.setItem(storePlot, plot)
           }
           });
-          };
+  var savedSearchBtn = document.createElement("button");
+  savedSearchBtn.textContent = genreText + ", " + storedDecade + ", " + lengthText + " Length Movie";
+  savedSearchBtn.setAttribute("class", "history-button");
+  savedSearchBtn.addEventListener("click", recallSearch);
+  aside.append(savedSearchBtn);
+};
 
 searchBtn.addEventListener("click", newSearch);
+
+
+
+function setFilterGenre() {
+  if(storedGenre == "Action") {
+    var genre = document.getElementById("28");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Adventure") {
+    var genre = document.getElementById("12");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Animation") {
+    var genre = document.getElementById("16");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Comedy") {
+    var genre = document.getElementById("35");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Crime") {
+    var genre = document.getElementById("80");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Documentary") {
+    var genre = document.getElementById("99");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Drama") {
+    var genre = document.getElementById("18");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Family-Friendly") {
+    var genre = document.getElementById("10751");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Fantasy") {
+    var genre = document.getElementById("14");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "History") {
+    var genre = document.getElementById("36");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Horror") {
+    var genre = document.getElementById("27");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Musical") {
+    var genre = document.getElementById("10402");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Mystery") {
+    var genre = document.getElementById("9648");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Romance") {
+    var genre = document.getElementById("10749");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Science Fiction") {
+    var genre = document.getElementById("878");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "TV Movie") {
+    var genre = document.getElementById("10770");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Thriller") {
+    var genre = document.getElementById("53");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "War") {
+    var genre = document.getElementById("10752");
+    genre.setAttribute("selected", "selected");
+  }
+  if(storedGenre == "Western") {
+    var genre = document.getElementById("37");
+    genre.setAttribute("selected", "selected");
+  }
+}
+
+setFilterGenre();
 
 function setFilterDecade() {
   if(storedDecade == "1950s") {
@@ -192,20 +287,6 @@ function setData() {
 }
 
 setData();
-
-// function recallSearch() {
-  
-//   var discoverURL = "https://api.themoviedb.org/3/discover/movie?api_key=701ebb9db6b0f6cd175ada217a8261bb&top_rated&primary_release_year=" + storedYear + "&with_genres" + storedGenreCode + "&&include_adult=false&sort_by=popularity.desc&language=en-US&watch_region=north%20america&page=1";
-
-//   fetch(discoverURL)
-//     .then(function (response) {
-//       return response.json()
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//     })
-//     return window.location.assign("./results.html");
-//   };
 
 function getNYTAPI() {
     var requestUrl = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=twilight&api-key=${keyNYT}`;
