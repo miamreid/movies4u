@@ -74,6 +74,7 @@ function goToPrompt1() {
   progressBar[3].classList.remove('active');
   prompt1.classList.remove("hidden");
   prompt2.classList.add("hidden");
+  prompt4.classList.add("hidden");
 }
   previousBtn2.addEventListener("click", goToPrompt1);
 
@@ -142,15 +143,16 @@ function saveUserLength() {
   var userLength = document.getElementById("user-length").value;
   console.log(userLength);
 
-  if(userLength = 90) {
+  if(userLength == "90") {
     lengthText = "Short";
   }
-  if(userLength = 120) {
+  if(userLength == "120") {
     lengthText = "Average";
   }
-  if(userLength = 150) {
-    lengthText = "Long"
+  if(userLength == "150") {
+    lengthText = "Long";
   }
+  console.log(lengthText);
 
   var storedLengthTextKey = "Stored Length Text";
   localStorage.setItem(storedLengthTextKey, lengthText);
@@ -177,12 +179,11 @@ function goToPrompt3() {
   prompt4.classList.add("hidden");
 }
 
-previousBtn4.addEventListener("click", goToPrompt3);
+previousBtn4.addEventListener("click", goToPrompt1);
 
 function moviedbAPI() {
   var storedGenre = localStorage.getItem("Genre Text");
   var storedDecade = localStorage.getItem("Decade Selected");
-  var storedLength = localStorage.getItem("Stored Length");
 
   var resultsGenre = document.querySelector(".genre");
   var resultsDecade = document.querySelector(".decade");
@@ -190,8 +191,8 @@ function moviedbAPI() {
 
   resultsGenre.innerHTML = "Genre: " + storedGenre;
   resultsDecade.innerHTML = "Decade: " + storedDecade;
-  resultsDuration.innerHTML = "Duration: " + storedLength;
-  
+  resultsDuration.innerHTML = "Duration: " + lengthText;
+
   var API_URL = "https://api.themoviedb.org/3/discover/movie";
 
   // Construct the API URL with the filter parameters
