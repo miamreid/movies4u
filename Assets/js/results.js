@@ -224,4 +224,31 @@ function getNYTAPI() {
 getNYTAPI();
 
 
+function infoRedirect() {
+  var cards = document.querySelectorAll('.result-item');
+  cards.forEach(function(card) {
+    var index = card.getAttribute('data-index');
+    card.addEventListener('click', function(){
+
+      var storedMovieTitle = localStorage.getItem('Stored Title-' + index);
+      var titleSelectKey = "Selected Title";
+      localStorage.setItem(titleSelectKey, storedMovieTitle);
+
+      var storedImgPath = localStorage.getItem("Stored Image Path-" + index);
+      var imgSelectKey = "Selected Image";
+      localStorage.setItem(imgSelectKey, storedImgPath);
+
+      var storedPlot = localStorage.getItem("Stored Plot-" + index);
+      var plotSelectKey = "Selected Plot"
+      localStorage.setItem(plotSelectKey, storedPlot);
+
+      toMoviePage();
+    });
+  }); 
+}
+
+function toMoviePage(){
+  window.location.assign('./movie-page.html');
+}
+
 
