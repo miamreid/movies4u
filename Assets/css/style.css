@@ -496,6 +496,12 @@ p {
 	top: 75%;
 }
 
+a {
+	margin-top: 5px;
+	top: 75%;
+	color: var(--yellow);
+}
+
 .results-container-hidden {
 	display: none;
 }
