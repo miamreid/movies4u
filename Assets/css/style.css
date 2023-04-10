@@ -1,3 +1,4 @@
+/*-----------------------------------------------Base CSS For All pages-------------------------------------------*/
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 :root {
@@ -39,6 +40,8 @@ body {
 	font-family: montserrat, arial, verdana;
 }
 
+/*-----------------------------------------------Index CSS-------------------------------------------*/
+
 /*form styles*/
 #msform {
 	width: 400px;
@@ -56,19 +59,12 @@ body {
 	box-sizing: border-box;
 	width: 80%;
 	margin: 20% 10%;
-
-	/*stacking fieldsets above each other*/
 	position: relative;
 }
-
+/*Making anything with this class hidden*/
 .hidden {
 	display: none;
 }
-
-/* Hide all except first fieldset
-#msform fieldset:not(:first-of-type) {
-	display: none;
-	/*Show only the first fieldset/question*/
 
 #prompt4 {
 	color: white;
@@ -190,8 +186,7 @@ body {
 	position: absolute;
 	left: -50%;
 	top: 21px;
-	z-index: -1;
-	/*put it behind the numbers*/
+	z-index: -1; /*put it behind the numbers*/
 }
 
 #progressbar li:first-child:after {
@@ -208,27 +203,12 @@ body {
 	color: var(--darkblue);
 }
 
-
-:before {
-	background-color: #27AE60;
-}
-
 .min-length {
 	padding: 10px;
 	color: white;
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 10px;
-}
-
-.movie-slider::-webkit-slider-thumb {
-	background: var(--faintred);
-
-}
-
-#user-length.slider {
-	border: none;
-	background-color: #f6f6f60b;
 }
 
 /*-----------------------------------------------Results CSS-------------------------------------------*/
@@ -253,7 +233,7 @@ aside {
 	text-align: center;
 	box-shadow: 5px 0px 20px #141b22;
 }
-
+/*Header for the filter section*/
 .aside-header {
 	text-align: center;
 	font-size: 32px;
@@ -264,6 +244,12 @@ aside {
 	margin-top: 30px;
 	margin-bottom: 20px;
 	text-transform: uppercase;
+}
+option{
+	text-align: center;
+	background-color: #B56576;
+    padding-right: 20px;
+    font-size: 18px;
 }
 
 .start-over-btn {
@@ -287,14 +273,20 @@ aside {
 	border-radius: 20px;
 }
 
-.saved-search:hover {
-	background-color: rgba(255, 255, 255, 0.05);
-	border-radius: 20px;
-}
-
 .start-over-btn:hover {
 	background-color: var(--yellow);
 	color: var(--darkblue);
+}
+
+.submit{
+	min-width: 120px;
+	height: 4vh;
+	border: var(--faintred);
+	border-radius: 30px;
+	display: inline-block;
+	color: white;
+	background-color: var(--faintred);
+	margin: 1vh;
 }
 
 /*text 'Filter'*/
@@ -328,7 +320,7 @@ aside {
 	border-radius: 30px;
 	display: inline-block;
 	color: white;
-	background-color: var(--faintred);
+	background-color: grey;
 	margin: 1vh;
 }
 
@@ -340,6 +332,12 @@ aside {
 
 
 /*----------------Styling Slider----------------*/
+
+.slider {
+	width: 100%;
+	border: none;
+	background: none;
+}
 .slidecontainer .slider[type="range"] {
 	-webkit-appearance: none;
 	/*getting rid of the default appearance*/
@@ -383,14 +381,6 @@ aside {
 	border-radius: 50%;
 }
 
-.results-field-selector option {
-	background-color: #27AE60;
-}
-option {
-    background-color: #B56576;
-    padding-right: 20px;
-    font-size: 18px;
-}
 
 /*-----------------------------------------------Movie CSS-------------------------------------------*/
 .movie {
@@ -477,6 +467,7 @@ img {
 	box-shadow: 0 0 10px 2px rgba(19, 19, 19, 0.733);
 	scale: 1.025;
 	filter: none;
+	background-color: var(--yellow);
 }
 
 .result-item:active {
@@ -515,7 +506,7 @@ p {
 	/*------------------------------------------Results Page--------------------------------------*/
 	aside{
 	  width: 100%;
-	  height: 50vh;
+	  height: 70vh;
 	  display: block;
 	  position: absolute;
 	}
@@ -527,7 +518,7 @@ p {
 		margin-left: 20px;
 		margin-right: 20px;
 		margin-bottom: 20px;
-		margin-top: 60vh;
+		margin-top: 80vh;
 	}
 	.result-item{
 		align-items: center;
@@ -540,7 +531,7 @@ p {
 	}
 	.saved-search{
 		margin: auto;
-		width: 40vw;
+		width: 60vw;
 	}
 	.start-over-btn{
 		width: 40vw;
