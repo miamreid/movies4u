@@ -10,9 +10,24 @@ Give it a try! https://miamreid.github.io/movies4u/ <br />
 OR! 
 View the repository: https://github.com/miamreid/movies4u/
 
-<img width="1568" alt="Screen Shot 2023-04-09 at 8 56 21 PM" src="https://user-images.githubusercontent.com/124822025/230805495-47362181-7759-4cb2-8ced-1b5e815e0f49.png">
+Selectors:
+
+<img width="1500" alt="Screen Shot of Selectors" src="Assets\scrnshot-selectors.png">
 <br />
-<img width="1711" alt="Screen Shot 2023-04-09 at 8 56 35 PM" src="https://user-images.githubusercontent.com/124822025/230805504-07c6dbf1-2ba1-4d07-9ef5-06c2d38ca80c.png">
+
+Movie Results:
+
+<img width="1500" alt="Screen Shot of Movie Results" src="Assets\scntshot-results.png">
+<br />
+
+Movie Details:
+
+<img width="1500" alt="Screen Shot of Movie Details" src="Assets\srcnshot-details.png">
+<br />
+
+Mobile Example:
+
+<img width="300" alt="Screen Shot of Mobile Example" src="Assets\scrnshot-mobile.png">
 
 ## User Story
 
