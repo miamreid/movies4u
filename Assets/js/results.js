@@ -291,6 +291,7 @@ function setData() {
 
 setData();
 
+// Function to store selected movie elements into localStorage
 function infoRedirect() {
   var cards = document.querySelectorAll('.result-item');
   cards.forEach(function(card) {
@@ -314,6 +315,7 @@ function infoRedirect() {
   }); 
 }
 
+// Function to movie-page.html on click
 function toMoviePage(){
   window.location.assign('./movie-page.html');
 }
