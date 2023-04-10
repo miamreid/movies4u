@@ -34,14 +34,14 @@ https://docs.google.com/presentation/d/1_OIccBg0UhNbGjCA8I3fxNatruvwLlSXJTldSZzb
 ## Rough Breakdown of Tasks
 
 <ul>
-	<li><strong>Mike and Wendell</strong>HTML and CSS of the application - what it looks like, making a css framework</li>
-	<li><strong>Mike and Wendell</strong>Multi-step form with:
+	<li><strong>Mike and Wendell:</strong> HTML and CSS of the application - what it looks like, making a css framework</li>
+	<li><strong>Mike and Wendell:</strong> Multi-step form with:
 		<li>Genre</li>
 		<li>Decade</li>
 		<li>Movie Length - sliding scale</li>
 	</li>
-	<li><strong>Mia:</strong>Capture user input, save searches</li>
-	<li><strong>Jose & Mia:</strong>Results page - sorted by best rated at the top</li>
-	<li><strong>Jose & Mia:</strong>Results page - pulls in movie poster to click into</li>
-	<li><strong>Jose:</strong>Movie page - pulls in movie poster, plot summary, actors, director, ratings</li>
+	<li><strong>Mia:</strong> Capture user input, save searches</li>
+	<li><strong>Jose & Mia:</strong> Results page - sorted by best rated at the top</li>
+	<li><strong>Jose & Mia:</strong> Results page - pulls in movie poster to click into</li>
+	<li><strong>Jose:</strong> Movie page - pulls in movie poster, plot summary, actors, director, ratings</li>
 </ul>
