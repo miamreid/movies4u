@@ -22,7 +22,7 @@ Movie Results:
 
 Movie Details:
 
-<img width="1500" alt="Screen Shot of Movie Details" src="Assets\srcnshot-details.png">
+<img width="1500" alt="Screen Shot of Movie Details" src="Assets\screenshot-moviepage.png">
 <br />
 
 Mobile Example:
