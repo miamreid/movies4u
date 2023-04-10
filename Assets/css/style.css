@@ -32,7 +32,7 @@ html {
 	/*background = gradient + image pattern combo*/
 	background:
 		linear-gradient(var(--darkblue), #6D597A);
-		background-attachment: fixed;
+	background-attachment: fixed;
 
 }
 
@@ -61,6 +61,7 @@ body {
 	margin: 20% 10%;
 	position: relative;
 }
+
 /*Making anything with this class hidden*/
 .hidden {
 	display: none;
@@ -125,7 +126,8 @@ body {
 	font-size: 15px;
 	text-transform: uppercase;
 	color: white;
-	margin-bottom: 30px;
+	margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 .fs-subtitle {
@@ -186,7 +188,8 @@ body {
 	position: absolute;
 	left: -50%;
 	top: 21px;
-	z-index: -1; /*put it behind the numbers*/
+	z-index: -1;
+	/*put it behind the numbers*/
 }
 
 #progressbar li:first-child:after {
@@ -233,6 +236,7 @@ aside {
 	text-align: center;
 	box-shadow: 5px 0px 20px #141b22;
 }
+
 /*Header for the filter section*/
 .aside-header {
 	text-align: center;
@@ -245,11 +249,12 @@ aside {
 	margin-bottom: 20px;
 	text-transform: uppercase;
 }
-option{
+
+option {
 	text-align: center;
 	background-color: #B56576;
-    padding-right: 20px;
-    font-size: 18px;
+	padding-right: 20px;
+	font-size: 18px;
 }
 
 .start-over-btn {
@@ -264,7 +269,9 @@ option{
 }
 
 .current-filters {
-	padding-bottom: 25px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 25px;
 	text-align: left;
 }
 
@@ -278,7 +285,7 @@ option{
 	color: var(--darkblue);
 }
 
-.submit{
+.submit {
 	min-width: 120px;
 	height: 4vh;
 	border: var(--faintred);
@@ -338,6 +345,7 @@ option{
 	border: none;
 	background: none;
 }
+
 .slidecontainer .slider[type="range"] {
 	-webkit-appearance: none;
 	/*getting rid of the default appearance*/
@@ -509,14 +517,16 @@ a {
 /*-----------------------------------------------Responsive CSS-------------------------------------------*/
 /*------------------------------------------Making all media Queries--------------------------------------*/
 @media screen and (max-width: 800px) {
+
 	/*------------------------------------------Results Page--------------------------------------*/
-	aside{
-	  width: 100%;
-	  height: 70vh;
-	  display: block;
-	  position: absolute;
+	aside {
+		width: 100%;
+		height: 70vh;
+		display: block;
+		position: absolute;
 	}
-	.results-container{
+
+	.results-container {
 		width: 100vw;
 		margin-top: 80vh;
 		flex-direction: row;
@@ -526,25 +536,29 @@ a {
 		margin-bottom: 20px;
 		margin-top: 80vh;
 	}
-	.result-item{
+
+	.result-item {
 		align-items: center;
 		width: 100%;
 		padding-top: 0%;
 	}
 
-	.aside-header{
+	.aside-header {
 		text-align: center;
 	}
-	.saved-search{
+
+	.saved-search {
 		margin: auto;
 		width: 60vw;
 	}
-	.start-over-btn{
+
+	.start-over-btn {
 		width: 40vw;
 	}
-	.current-filters{
+
+	.current-filters {
 		width: 60vw;
 		text-align: center;
 		margin: auto;
 	}
-  }
+}
