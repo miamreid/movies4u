@@ -23,19 +23,19 @@ $(document.readyState(function(){
 
 */
 // index.html Elements
-var submitBtn = document.querySelector(".submit");
-var genreBtn = document.querySelector("#genreButton");
-var genreDiv = document.getElementById("user-genre");
-var releaseYear;
-var lengthText;
-var lengthTime;
-var decadeBtn = document.querySelector("#decadeButton");
-var lengthBtn = document.getElementById("lengthButton");
+var submitBtn = document.querySelector(".submit"); //submit button on card4, redirects to the results page after local storage is saved with results
+var genreBtn = document.querySelector("#genreButton"); //saves user genre selection to the fetch request and local storage
+var genreDiv = document.getElementById("user-genre"); //holds the genre input options and values
+var releaseYear; //declared in the math function to pull a random year from decade chosen by user
+var lengthText; //translates user's length selection to text
+var lengthTime; //declared in the fetch request. translates the integer value from the user length selection
+var decadeBtn = document.querySelector("#decadeButton"); //saves the user decade selection to local storage and initiates math function to choose a random year that gets pulled into the api fetch request
+var lengthBtn = document.getElementById("lengthButton"); //saves the user's length selection (short == 90, average == 120, long == 150)
 
 var API_KEY = "701ebb9db6b0f6cd175ada217a8261bb";
-var decadeDiv = document.getElementById("user-decade");
+var decadeDiv = document.getElementById("user-decade"); //holds the decade input options and values
 
-var previousBtn2 = document.querySelector("#previousBtn2");
+var previousBtn2 = document.querySelector("#previousBtn2"); //previous button selections that trigger form cards switching
 var previousBtn3 = document.querySelector("#previousBtn3");
 var previousBtn4 = document.querySelector("#previousBtn4");
 
@@ -209,7 +209,8 @@ function moviedbAPI() {
 
       //var storeData = "DiscoverUrl";
       //window.localStorage.setItem(storeData, JSON.stringify(data));
-
+      
+      //assigns the image, title, and plot to local storage for each item in the data array
       for (var i = 0; i < 20; i++) {
         var result = document.getElementById("img-" + [i]);
         result.src = "https://image.tmdb.org/t/p/w500" + data.results[i].poster_path;

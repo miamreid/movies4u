@@ -1,6 +1,6 @@
 var keyNYT = "oxAVFGzkee0zA6fTb7Q4lA32umzPGXjC"
 
-var storedGenre = localStorage.getItem("Genre Text");
+var storedGenre = localStorage.getItem("Genre Text"); 
 var storedGenreCode = localStorage.getItem("Stored Genre Code");
 var storedDecade = localStorage.getItem("Decade Selected");
 var storedYear = localStorage.getItem("Random Year");
@@ -14,6 +14,7 @@ var historyBtn = document.querySelector(".history-button");
 var searchBtn = document.querySelector(".submit");
 var startOverBtn = document.querySelector(".start-over-btn");
 
+//pulls in local storage data from the previous save
 historyBtn.innerHTML = storedGenre + ", " + storedDecade + ", " + storedLengthText + " Length Movie";
 // historyBtn.addEventListener("click", recallSearch);
 
@@ -23,6 +24,7 @@ function startOver() {
 
 startOverBtn.addEventListener("click", startOver);
 
+//changes the local storage values when user selects new filters from the aside menu and appends the new search button underneath
 function newSearch() {
 
   storedGenreCode = asideGenre.value;
@@ -139,7 +141,7 @@ function newSearch() {
 
 searchBtn.addEventListener("click", newSearch);
 
-
+//The following functions change the filter selections based on what the user chose from the homescreen menus.
 
 function setFilterGenre() {
   if(storedGenre == "Action") {
@@ -273,6 +275,8 @@ function setFilterLength() {
 }
 
 setFilterLength();
+
+//after local storage is retrieved from the user selections, the setData function pulls in the image and title to display on the results page
 
 function setData() {
   for(var i = 0; i < 20; i++) {
