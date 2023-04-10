@@ -134,7 +134,6 @@ function newSearch() {
   var savedSearchBtn = document.createElement("button");
   savedSearchBtn.textContent = genreText + ", " + storedDecade + ", " + lengthText + " Length Movie";
   savedSearchBtn.setAttribute("class", "history-button");
-  savedSearchBtn.addEventListener("click", recallSearch);
   aside.append(savedSearchBtn);
 };
 
